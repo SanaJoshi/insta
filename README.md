@@ -28,10 +28,6 @@ installing shrine gem could be challenging. you have to create image_uploader fi
 
 ## What I learnt
 
-* Use of Figma to create wireframe
-* Balsamiq to create mock ups.
-* Git hub- creating my branch, working with master branch
-* working in a team and achieving the result everyone wanted to achieve.
 
 
 ## Summary
