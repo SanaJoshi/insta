@@ -12,6 +12,10 @@
 https://github.com/plataformatec/devise
 *then install shrine gem to upload photos
 https://github.com/janko-m/shrine
+* for like button use gem 'acts_as_votable', '~> 0.10.0'
+
+http://www.mattmorgante.com/technology/votable
+
 
 
 ## Challenge
