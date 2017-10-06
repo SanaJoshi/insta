@@ -65,8 +65,17 @@ class PhotosController < ApplicationController
   def downvote
   @photo = Photo.find(params[:id])
   @photo.downvote_by current_user
-  
+
   redirect_back fallback_location: root_path
+  end
+
+  def index
+  @photos = Photo.all
+  if params[:search]
+    @photos = Photo.search(params[:search]).order("created_at DESC")
+  else
+    @photos = Photo.all.order("created_at DESC")
+  end
   end
 
   private

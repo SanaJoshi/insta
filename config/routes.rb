@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   root 'photos#index'
   resources :photos do
-  
+
   member do
-    put "like", to: "photos#upvote"
-    put "dislike", to: "photos#downvote"
+    put "like", to: "photos#like"
+    put "dislike", to: "photos#unlike"
   end
 end
 

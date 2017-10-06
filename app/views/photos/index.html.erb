@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Photos</h1>
+<h1>Welcome to Rohan & mum team</h1>
 
 <table>
   <thead>
@@ -29,9 +29,12 @@
         <%= photo.get_downvotes.size %>
         <% end %>
         </td>
-        <td><%= link_to 'Show', photo %></td>
+        <% if @photos.blank? %>
+  <h4>There are no photos containing the term <%= params[:search] %>.</h4>
+<% end %>
+        <!-- <td><%= link_to 'Show', photo %></td>
         <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-        <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
 
 
