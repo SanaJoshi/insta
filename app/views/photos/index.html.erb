@@ -1,48 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Welcome to Rohan & mum team</h1>
+<div class="row">
 
-<table>
-  <thead>
-    <tr>
-      <th>Image data</th>
-      <th>User</th>
-      <th>Caption</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h1>Welcome to lala land</h1>
 
-  <tbody>
+</div>
 
+
+<div class="row">
     <% @photos.each do |photo| %>
-      <tr>
-        <td><  <img src="<%= photo.image_url %>"></td>
-        <td><%= photo.user %></td>
-        <td><%= photo.caption %></td>
-        <td><%= link_to like_photo_path(photo), method: :put do %>
-        Upvote
-        <%= photo.get_upvotes.size %>
+      <div class="col-md-4">
+          <!-- <a href="#" class="thumbnail"> -->
+          <%= image_tag(photo.image_url, width: "100%", height: "100%")%>
+          <!-- </a> -->
+          <p>  <%= photo.caption %></p>
+          <p>
+          <%= link_to like_photo_path(photo), method: :put do %>
+            Like
+            <%= photo.get_upvotes.size %>
+          <% end %>
+
+          <%= link_to dislike_photo_path(photo), method: :put do %>
+            Dislike
+            <%= photo.get_downvotes.size %>
+        </p>
+        </div>
+
         <% end %>
 
-        <%= link_to dislike_photo_path(photo), method: :put do %>
-        Downvote
-        <%= photo.get_downvotes.size %>
-        <% end %>
-        </td>
+
+
+
+        <!-- </td> -->
         <% if @photos.blank? %>
-  <h4>There are no photos containing the term <%= params[:search] %>.</h4>
-<% end %>
-        <!-- <td><%= link_to 'Show', photo %></td>
-        <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-        <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-      </tr>
-
-
+          <h4>There are no photos containing the term <%= params[:search] %>.</h4>
+        <% end %>
 
     <% end %>
-  </tbody>
-</table>
+</div>
 
-<br>
-
-<%= link_to 'New Photo', new_photo_path %>
+<%= link_to ' Click here to upload New Photo', new_photo_path %>

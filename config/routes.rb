@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'profiles/show'
+
   devise_for :users
-  root 'photos#index'
+  root 'home#index'
   resources :photos do
 
   member do
-    put "like", to: "photos#like"
-    put "dislike", to: "photos#unlike"
+    put "like", to: "photos#upvote"
+    put "dislike", to: "photos#downvote"
   end
 end
 

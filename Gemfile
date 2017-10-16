@@ -6,7 +6,8 @@ git_source(:github) do |repo_name|
 end
 #my gem
 gem 'devise'
-gem 'bootstrap', '~> 4.0.0.beta'
+# gem 'bootstrap', '~> 4.0.0.beta'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 gem "shrine"
 gem 'acts_as_votable', '~> 0.10.0'

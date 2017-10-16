@@ -1,1 +1,21 @@
-<h1>Welcome to my Instagram</h1>
+
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <% if user_signed_in? %>
+      <%= link_to 'Logout' , destroy_user_session_path, method: :delete %>
+    <% end %>
+
+  </li>
+</ul>
+
+
+<!-- <a href="/photos">Please click here to see photos.</a> -->
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">Welcome to Sanagram</h1>
+    <%= link_to "Please click here to see photos." , photos_path, class: "btn btn-danger"%>
+
+
+  </div>
+</div>
